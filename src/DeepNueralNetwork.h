@@ -10,7 +10,8 @@ public:
     {
         mLayers.push_back(layer);
     }
-    void Calculate(){
+    void Calculate()
+    {
         MatrixXd * out = &mInput;
         for(size_t l = 0; l < mLayers.size(); l++)
         {
@@ -19,8 +20,20 @@ public:
         }
         mOutput = (*out);
     }
-    void Calculate(MatrixXd input){
+
+    void Calculate(MatrixXd input)
+    {
         mInput = input;
         Calculate();
+    }
+
+    bool ReadFromKerasJson(std::string file)
+    {
+
+    }
+
+    bool ReadFromTensorFlow(std::string file)
+    {
+
     }
 };
