@@ -2,123 +2,13 @@
 #include <Eigen/Dense>
 #include <functional>
 #include <vector>
+#include "DeepNueralNetwork.h"
 using Eigen::MatrixXd;
 using std::cout;
 using std::endl;
 using std::vector;
-class Layer{
-public:
-    enum class Function
-    {
-        Liner, Sigmoid, ReLu, SoftMax
-    };
-    MatrixXd mInput;
-    MatrixXd mOutput;
-    MatrixXd mWeight;
-    MatrixXd mBios;
 
-    Layer() = delete;
-    Layer(const MatrixXd weight, const MatrixXd bios){
-        mWeight = weight;
-        mBios = bios;
-        mFunction = LinerFunction;
-    }
-    Layer(const MatrixXd weight, const MatrixXd bios, Function function){
-        mWeight = weight;
-        mBios = bios;
-        switch (function) {
-        case Function::Liner:
-            mFunction = LinerFunction;
-            break;
-        case Function::ReLu:
-            mFunction = ReLuFunction;
-            break;
-        case Function::SoftMax:
-            mFunction = SoftMaxFunction;
-            break;
-        case Function::Sigmoid:
-            mFunction = SigmoidFunction;
-            break;
-        }
 
-    }
-    void Calculate(){
-        mOutput = mWeight * mInput;
-        mFunction(mOutput);
-    }
-    void Calculate(MatrixXd input){
-        mInput = input;
-        Calculate();
-    }
-    std::function<void(MatrixXd &)> mFunction;
-    static void LinerFunction(MatrixXd & output){
-        for(int i = 0; i < output.rows(); i++){
-            for(int j = 0; j < output.cols(); j++){
-                output(i, j) = output(i, j);
-            }
-        }
-    }
-    static void ReLuFunction(MatrixXd & output){
-        for(int i = 0; i < output.rows(); i++){
-            for(int j = 0; j < output.cols(); j++){
-                if( output(i, j) < 0)
-                    output(i, j) = 0;
-                else
-                    output(i, j) = output(i, j);
-            }
-        }
-    }
-    static void SoftMaxFunction(MatrixXd & output){
-        double min = 0;
-        for(int i = 0; i < output.rows(); i++){
-            for(int j = 0; j < output.cols(); j++){
-                if(min > output(i, j))
-                    min = output(i, j);
-            }
-        }
-        double sum = 0;
-        for(int i = 0; i < output.rows(); i++){
-            for(int j = 0; j < output.cols(); j++){
-                sum += (output(i, j) - min);
-            }
-        }
-        for(int i = 0; i < output.rows(); i++){
-            for(int j = 0; j < output.cols(); j++){
-                output(i, j) = (output(i, j) - min) / sum;
-            }
-        }
-    }
-    static void SigmoidFunction(MatrixXd & output){
-        for(int i = 0; i < output.rows(); i++){
-            for(int j = 0; j < output.cols(); j++){
-                output(i, j) = 1.0 / (1.0 + exp(-output(i, j)));
-            }
-        }
-    }
-};
-class DeepNueralNetwork{
-public:
-    MatrixXd mInput;
-    MatrixXd mOutput;
-    vector<Layer> mLayers;
-    void AddLayer(const Layer layer)
-    {
-        mLayers.push_back(layer);
-    }
-    void Calculate(){
-        MatrixXd * out = &mInput;
-        for(size_t l = 0; l < mLayers.size(); l++)
-        {
-             mLayers[l].Calculate(*out);
-             out = &(mLayers[l].mOutput);
-        }
-        mOutput = (*out);
-    }
-    void Calculate(MatrixXd input){
-        mInput = input;
-        Calculate();
-    }
-};
 
 int main()
 {
@@ -142,9 +32,9 @@ int main()
     i(1,0) = 1;
     i(2,0) = 2;
     i(3,0) = -1;
-    Layer a(w1, b1, Layer::Function::ReLu);
-    Layer aa(w2, b2, Layer::Function::Sigmoid);
-    Layer aaa(w3, b3, Layer::Function::Liner);
+    Layer a(w1, b1, Function::ReLu);
+    Layer aa(w2, b2, Function::Sigmoid);
+    Layer aaa(w3, b3, Function::Liner);
 
     DeepNueralNetwork dnn;
     dnn.AddLayer(a);
