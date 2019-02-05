@@ -1,10 +1,31 @@
 #include <Eigen/Dense>
+#include <iostream>
 using Eigen::MatrixXd;
 
 enum class Function
 {
     Liner, Sigmoid, ReLu, SoftMax
 };
+Function StringToFunction(std::string function)
+{
+    std::cout<<function<<std::endl;
+    if (function.compare("liner") == 0)
+    {
+        return Function::Liner;
+    }
+    if (function.compare("relu") == 0)
+    {
+        return Function::ReLu;
+    }
+    if (function.compare("sigmoid") == 0)
+    {
+        return Function::Sigmoid;
+    }
+    if (function.compare("softmax") == 0)
+    {
+        return Function::SoftMax;
+    }
+}
 static void LinerFunction(MatrixXd & output){
     for(int i = 0; i < output.rows(); i++){
         for(int j = 0; j < output.cols(); j++){

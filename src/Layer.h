@@ -35,6 +35,7 @@ public:
     }
     void Calculate(){
         mOutput = mWeight * mInput;
+        mOutput += mBios;
         mFunction(mOutput);
     }
     void Calculate(MatrixXd input){
