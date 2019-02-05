@@ -13,14 +13,13 @@ using std::vector;
 int main()
 {
     DeepNueralNetwork dnn;
-    dnn.ReadFromKeras("/home/nader/workspace/github/CppDNN/example/keras_mnist/w.json");
-    MatrixXd input(784,1);
-    std::fstream infile("/home/nader/workspace/github/CppDNN/example/keras_mnist/mnist_example");
-    for(int i = 0; i < 784; i++)
-    {
-        double a;  infile>>a;
-        input(i,0) = a;
-    }
+    dnn.ReadFromKeras("/home/nader/workspace/github/CppDNN/example/keras_simple/simple.txt");
+    MatrixXd input(5,1);
+    input(0,0) = 1;
+    input(1,0) = 2;
+    input(2,0) = 1;
+    input(3,0) = 2;
+    input(4,0) = 1;
     dnn.Calculate(input);
     cout<<dnn.mOutput<<std::endl;
 }

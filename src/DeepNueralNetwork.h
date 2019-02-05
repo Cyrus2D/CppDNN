@@ -18,8 +18,10 @@ public:
         MatrixXd * out = &mInput;
         for(size_t l = 0; l < mLayers.size(); l++)
         {
+            std::cout<<"calc l"<<std::endl;
              mLayers[l].Calculate(*out);
              out = &(mLayers[l].mOutput);
+             std::cout<<"out"<<(*out)(0,0)<<","<<(*out)(1,0)<<std::endl;
         }
         mOutput = (*out);
     }
@@ -49,9 +51,9 @@ public:
             iss >> mSize >> nSize;
             std::getline(infile, line);
             MatrixXd W(mSize, nSize);
-            for (int m = 0; m < mSize; m++)
+            for (int n = 0; n < nSize; n++)
             {
-                for (int n = 0; n < nSize; n++)
+                for (int m = 0; m < mSize; m++)
                 {
                     std::getline(infile, line);
                     std::istringstream iss(line);

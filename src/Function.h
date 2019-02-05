@@ -4,14 +4,13 @@ using Eigen::MatrixXd;
 
 enum class Function
 {
-    Liner, Sigmoid, ReLu, SoftMax
+    Linear, Sigmoid, ReLu, SoftMax
 };
 Function StringToFunction(std::string function)
 {
-    std::cout<<function<<std::endl;
-    if (function.compare("liner") == 0)
+    if (function.compare("linear") == 0)
     {
-        return Function::Liner;
+        return Function::Linear;
     }
     if (function.compare("relu") == 0)
     {
@@ -26,7 +25,7 @@ Function StringToFunction(std::string function)
         return Function::SoftMax;
     }
 }
-static void LinerFunction(MatrixXd & output){
+static void LinearFunction(MatrixXd & output){
     for(int i = 0; i < output.rows(); i++){
         for(int j = 0; j < output.cols(); j++){
             output(i, j) = output(i, j);
@@ -44,22 +43,15 @@ static void ReLuFunction(MatrixXd & output){
     }
 }
 static void SoftMaxFunction(MatrixXd & output){
-    double min = 0;
-    for(int i = 0; i < output.rows(); i++){
-        for(int j = 0; j < output.cols(); j++){
-            if(min > output(i, j))
-                min = output(i, j);
-        }
-    }
     double sum = 0;
     for(int i = 0; i < output.rows(); i++){
         for(int j = 0; j < output.cols(); j++){
-            sum += (output(i, j) - min);
+            sum += exp(output(i, j));
         }
     }
     for(int i = 0; i < output.rows(); i++){
         for(int j = 0; j < output.cols(); j++){
-            output(i, j) = (output(i, j) - min) / sum;
+            output(i, j) = exp(output(i, j)) / sum;
         }
     }
 }

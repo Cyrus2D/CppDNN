@@ -5,8 +5,9 @@ if len(sys.argv) < 3:
     print('usage: python DecodeKerasModel.py input output')
     exit(1)
 
-input = "/home/nader/workspace/github/CppDNN/example/keras_mnist/model.h5"
-output = "/home/nader/workspace/github/CppDNN/example/keras_mnist/w.json"
+input = sys.argv[1]
+output = sys.argv[2]
+print(input)
 outputFile = open(output, 'w')
 model = models.load_model(input)
 weights_list = model.get_weights()
@@ -18,10 +19,12 @@ for l in range(int(len(weights_list)/2)):
     outputFile.write(model.layers[l].activation.__str__().split(' ')[1] + '\n')
     outputFile.write(str(len(b)) + ' ' + str(len(w)) + '\n')
     outputFile.write("# W" + '\n')
+    print(w.shape)
     for x in w:
         for y in x:
             outputFile.write(str(y) + '\n')
     outputFile.write("# B" + '\n')
+    print(b.shape)
     for x in b:
         outputFile.write(str(x) + '\n')
 

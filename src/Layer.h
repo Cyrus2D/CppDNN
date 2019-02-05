@@ -12,14 +12,14 @@ public:
     Layer(const MatrixXd weight, const MatrixXd bios){
         mWeight = weight;
         mBios = bios;
-        mFunction = LinerFunction;
+        mFunction = LinearFunction;
     }
     Layer(const MatrixXd weight, const MatrixXd bios, Function function){
         mWeight = weight;
         mBios = bios;
         switch (function) {
-        case Function::Liner:
-            mFunction = LinerFunction;
+        case Function::Linear:
+            mFunction = LinearFunction;
             break;
         case Function::ReLu:
             mFunction = ReLuFunction;
