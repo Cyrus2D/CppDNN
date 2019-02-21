@@ -18,7 +18,7 @@ public:
         MatrixXd * out = &mInput;
         for(size_t l = 0; l < mLayers.size(); l++)
         {
-            std::cout<<"calc l"<<std::endl;
+             std::cout<<"calc l"<<std::endl;
              mLayers[l].Calculate(*out);
              out = &(mLayers[l].mOutput);
              std::cout<<"out"<<(*out)(0,0)<<","<<(*out)(1,0)<<std::endl;
@@ -38,6 +38,7 @@ public:
         std::string line;
         std::getline(infile, line);
         int layerSize = std::stod(line.substr(line.find_last_of(" "), line.size()));
+        std::cout << "layerSize: " << layerSize << std::endl;
         for (int l = 0; l < layerSize; l++)
         {
             std::getline(infile, line);
@@ -76,6 +77,6 @@ public:
 
     bool ReadFromTensorFlow(std::string file)
     {
-
+	ReadFromKeras(file);
     }
 };
