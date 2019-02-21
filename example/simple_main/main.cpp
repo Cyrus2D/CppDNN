@@ -1,13 +1,14 @@
 #include <iostream>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 #include <functional>
 #include <vector>
-#include "DeepNueralNetwork.h"
+//#include "DeepNueralNetwork.h"
 using Eigen::MatrixXd;
 using std::cout;
 using std::endl;
 using std::vector;
 
+#include <CppDNN/DeepNueralNetwork.h>
 
 
 int main()
