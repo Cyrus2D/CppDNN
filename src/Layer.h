@@ -24,6 +24,9 @@ public:
         case Function::ReLu:
             mFunction = ReLuFunction;
             break;
+        case Function::Elu:
+            mFunction = EluFunction;
+            break;
         case Function::SoftMax:
             mFunction = SoftMaxFunction;
             break;
