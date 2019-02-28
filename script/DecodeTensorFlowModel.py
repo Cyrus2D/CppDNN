@@ -1,5 +1,5 @@
 import tensorflow as tf
-from DNN import NeuralNetworkSaver as nns
+import NeuralNetworkSaver as nns
 
 nx = 94
 n1 = 256
