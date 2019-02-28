@@ -73,10 +73,12 @@ public:
             }
             AddLayer(Layer(W, B, StringToFunction(activation)));
         }
+        return true; //for remove warning
     }
 
     bool ReadFromTensorFlow(std::string file)
     {
-	ReadFromKeras(file);
+		ReadFromKeras(file);
+		return true; //for remove warning
     }
 };

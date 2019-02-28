@@ -4,7 +4,7 @@ using Eigen::MatrixXd;
 
 enum class Function
 {
-    Linear, Sigmoid, ReLu, Elu, SoftMax
+    Linear, Sigmoid, ReLu, ELu, SoftMax
 };
 Function StringToFunction(std::string function)
 {
@@ -18,7 +18,7 @@ Function StringToFunction(std::string function)
     }
     if (function.compare("elu") == 0)
 	{
-    	return Function::Elu;
+    	return Function::ELu;
 	}
     if (function.compare("sigmoid") == 0)
     {
@@ -28,6 +28,8 @@ Function StringToFunction(std::string function)
     {
         return Function::SoftMax;
     }
+    
+    return Function::Linear; // just for removing warnings
 }
 static void LinearFunction(MatrixXd & output){
     for(int i = 0; i < output.rows(); i++){
