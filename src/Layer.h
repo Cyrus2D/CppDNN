@@ -1,3 +1,7 @@
+
+#ifndef CppDNNLayer
+#define CppDNNLayer
+
 #include <eigen3/Eigen/Dense>
 #include "Function.h"
 using Eigen::MatrixXd;
@@ -47,3 +51,5 @@ public:
     }
     std::function<void(MatrixXd &)> mFunction;
 };
+
+#endif

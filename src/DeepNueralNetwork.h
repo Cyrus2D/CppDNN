@@ -1,3 +1,7 @@
+
+#ifndef CppDNN
+#define CppDNN
+
 #include "Layer.h"
 #include <vector>
 #include <fstream>
@@ -82,3 +86,5 @@ public:
 		return true; //for remove warning
     }
 };
+
+#endif

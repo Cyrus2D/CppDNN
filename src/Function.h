@@ -1,3 +1,7 @@
+
+#ifndef CppDNNFunction
+#define CppDNNFunction
+
 #include <eigen3/Eigen/Dense>
 #include <iostream>
 using Eigen::MatrixXd;
@@ -80,3 +84,5 @@ static void SigmoidFunction(MatrixXd & output){
         }
     }
 }
+
+#endif
