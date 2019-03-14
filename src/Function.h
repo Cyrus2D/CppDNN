@@ -10,7 +10,7 @@ enum class Function
 {
     Linear, Sigmoid, ReLu, ELu, SoftMax
 };
-Function StringToFunction(std::string function)
+inline Function StringToFunction(std::string function)
 {
     if (function.compare("linear") == 0)
     {
