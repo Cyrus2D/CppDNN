@@ -1,6 +1,4 @@
-
-#ifndef CppDNNLayer
-#define CppDNNLayer
+#pragma once
 
 #include <eigen3/Eigen/Dense>
 #include "Function.h"
@@ -52,4 +50,3 @@ public:
     std::function<void(MatrixXd &)> mFunction;
 };
 
-#endif

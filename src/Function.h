@@ -1,6 +1,4 @@
-
-#ifndef CppDNNFunction
-#define CppDNNFunction
+#pragma once
 
 #include <eigen3/Eigen/Dense>
 #include <iostream>
@@ -85,4 +83,3 @@ static void SigmoidFunction(MatrixXd & output){
     }
 }
 
-#endif

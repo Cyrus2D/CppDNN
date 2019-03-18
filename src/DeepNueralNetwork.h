@@ -1,6 +1,5 @@
+#pragma once
 
-#ifndef CppDNN
-#define CppDNN
 
 #include "Layer.h"
 #include <vector>
@@ -87,4 +86,3 @@ public:
     }
 };
 
-#endif
