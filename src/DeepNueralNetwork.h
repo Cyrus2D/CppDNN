@@ -21,10 +21,10 @@ public:
         MatrixXd * out = &mInput;
         for(size_t l = 0; l < mLayers.size(); l++)
         {
-             std::cout<<"calc l"<<std::endl;
+//             std::cout<<"calc l"<<std::endl;
              mLayers[l].Calculate(*out);
              out = &(mLayers[l].mOutput);
-             std::cout<<"out"<<(*out)(0,0)<<","<<(*out)(1,0)<<std::endl;
+//             std::cout<<"out"<<(*out)(0,0)<<","<<(*out)(1,0)<<std::endl;
         }
         mOutput = (*out);
     }
