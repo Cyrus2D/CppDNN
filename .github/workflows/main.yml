@@ -31,3 +31,8 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: install dependencies
+      run: echo nader
+    
+    - name: make
+      run: mkdir build && cd build && cmake .. && make
