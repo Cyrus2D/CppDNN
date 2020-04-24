@@ -40,4 +40,4 @@ jobs:
       run: mkdir build && cd build && cmake .. && make
     
     - name: test
-      run: pwd && ls && ls .. && cd build/example/simple_main && pwd && ls &&./CppDNN
+      run: pwd && ls && echo "----------" && ls .. && cd build/example/simple_main && pwd && ls &&./CppDNN
