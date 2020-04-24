@@ -38,3 +38,6 @@ jobs:
     
     - name: make
       run: mkdir build && cd build && cmake .. && make
+    
+    - name: test
+      run: cd example/simple_main && ./CppDNN
