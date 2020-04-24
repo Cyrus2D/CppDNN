@@ -37,7 +37,7 @@ jobs:
       run: echo nader
     
     - name: cmake
-      run: mkdir build && cd build && cmake .. 
+      run: mkdir build && cd build && cmake .. && sudo make install
     
     - name: make
       run: cd build && make
