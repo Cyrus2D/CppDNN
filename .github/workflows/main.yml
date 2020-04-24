@@ -40,5 +40,5 @@ jobs:
       run: mkdir build && cd build && cmake .. && sudo make install
     
     - name: test
-      run: cd example/simple_main && cmake . && make && pwd && ls && ./CppDnn
+      run: cd example/simple_main && cmake . && make && pwd && ls && ./CppDNN
     
