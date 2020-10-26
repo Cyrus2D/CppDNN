@@ -11,13 +11,17 @@ print(input)
 outputFile = open(output, 'w')
 model = models.load_model(input)
 weights_list = model.get_weights()
+print("#################################################################")
+print("# Layer Numbers: " + str(len(weights_list)) + '\n')
 outputFile.write("# Layer Numbers: " + str(int(len(weights_list)/2)) + '\n')
 for l in range(int(len(weights_list)/2)):
     w = weights_list[l * 2]
     b = weights_list[l * 2 + 1]
     outputFile.write("# Layer Number: {}".format(l) + '\n')
+    print("# Layer Number: {}".format(l) + '\n')
     outputFile.write(model.layers[l].activation.__str__().split(' ')[1] + '\n')
     outputFile.write(str(len(b)) + ' ' + str(len(w)) + '\n')
+    print(str(len(b)) + ' ' + str(len(w)) + '\n')
     outputFile.write("# W" + '\n')
     print(w.shape)
     for x in w:
@@ -27,4 +31,6 @@ for l in range(int(len(weights_list)/2)):
     print(b.shape)
     for x in b:
         outputFile.write(str(x) + '\n')
+        
+outputFile.close()
 
