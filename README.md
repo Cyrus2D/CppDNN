@@ -12,7 +12,7 @@ sudo apt install libeigen3-dev
 ```
 
 ### Install
-`
+```
 mkdir build
 cd build
 cmake ..
@@ -20,11 +20,13 @@ make
 sudo make install
 ```
 
+
 ### How to convert a keras model
 ```
 cd script
 python DecodeKerasModel.py input-path output-path
 ```
+
 
 ### How to use the library
 There is an example in CppDNN/example/simple_main/main.cpp
