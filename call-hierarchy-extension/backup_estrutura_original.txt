@@ -1,0 +1,23 @@
+total 88
+drwxrwxr-x 14 andre andre 4096 ago  3 16:52 .
+drwxrwxr-x 12 andre andre 4096 ago  3 16:40 ..
+drwxrwxr-x  2 andre andre 4096 ago  3 16:52 {
+drwxrwxr-x  2 andre andre 4096 ago  3 16:47 backup
+-rw-rw-r--  1 andre andre    0 ago  3 17:09 backup_estrutura_original.txt
+drwxrwxr-x  3 andre andre 4096 ago  3 16:52 config
+drwxrwxr-x  2 andre andre 4096 ago  3 16:47 data
+drwxrwxr-x  2 andre andre 4096 ago  3 16:47 docs
+-rw-rw-r--  1 andre andre  589 ago  3 17:08 .gitignore
+drwxrwxr-x  2 andre andre 4096 ago  3 16:47 logs
+-rwxrwxr-x  1 andre andre 4162 ago  3 17:08 main.py
+-rw-rw-r--  1 andre andre 1073 ago  3 16:40 package.json
+-rw-rw-r--  1 andre andre 2573 ago  3 17:08 PROJECT_STRUCTURE_REPORT.md
+-rw-rw-r--  1 andre andre 1190 ago  3 16:40 README.md
+-rw-rw-r--  1 andre andre  538 ago  3 17:08 requirements.txt
+drwxrwxr-x  2 andre andre 4096 ago  3 16:47 scripts
+drwxrwxr-x  3 andre andre 4096 ago  3 16:41 src
+drwxrwxr-x  2 andre andre 4096 ago  3 16:47 static
+drwxrwxr-x  2 andre andre 4096 ago  3 16:47 templates
+drwxrwxr-x  2 andre andre 4096 ago  3 16:47 tests
+drwxrwxr-x  2 andre andre 4096 ago  3 16:40 .vscode
+-rw-rw-r--  1 andre andre  758 ago  3 16:40 webpack.config.js

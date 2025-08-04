@@ -1,30 +1,80 @@
-# CppDNN
+# Sistema Integrado de Bioinformática com Deep Learning
 
-A c++ library to use Keras DNN in c++ programs.
+## Versão 2.0 - IA Melhorada
 
-There are two script that can read tensoflow or keras DNN weight from a saved model, and convert them into txt file.
-After that you can use the CppDnn to read the txt weight file and use the DNN in c++ programs.
+Este sistema integra análise de bioinformática com redes neurais profundas melhoradas, fornecendo uma plataforma completa para análise de sequências de proteínas e DNA.
 
-### Install dependency
-After that, install Eigen3: https://eigen.tuxfamily.org/dox/index.html
+## 🧬 Funcionalidades Principais
+
+### Rede Neural Melhorada (C++)
+- **Múltiplos Otimizadores**: SGD com momentum, Adam, RMSprop
+- **Regularização**: Dropout, weight decay
+- **Early Stopping**: Prevenção de overfitting
+- **Validação Cruzada**: Divisão automática de dados
+- **Estatísticas de Treinamento**: Acompanhamento detalhado do progresso
+- **Análise de Feature Importance**: Identificação de características importantes
+
+### Processamento de Bioinformática (Python)
+- **Processamento FASTA**: Leitura e escrita de arquivos FASTA com nomenclatura melhorada
+- **Análise de Sequências**: Estatísticas detalhadas de composição
+- **Codificação Genética**: Transcrição DNA→RNA e tradução RNA→Proteína
+- **IA para Classificação**: Sistema de aprendizado para análise de impacto
+- **Integração C++/Python**: Comunicação entre sistemas
+
+## 📁 Estrutura do Projeto
+
 ```
-sudo apt install libeigen3-dev
+CppDNN/
+├── src/
+│   ├── DeepNueralNetwork.h      # Rede neural melhorada
+│   ├── BioinformaticsIntegration.h  # Integração com bioinformática
+│   ├── Layer.h                  # Camadas da rede neural
+│   └── Function.h               # Funções de ativação
+├── example/
+│   ├── bioinformatics_main.cpp  # Exemplo principal
+│   └── simple_main/             # Exemplos simples
+├── dados/                       # Diretório de dados (criado automaticamente)
+│   ├── modelos/                 # Modelos treinados
+│   ├── treinamento/             # Dados de treinamento
+│   ├── sequencias/              # Arquivos FASTA
+│   ├── resultados/              # Resultados de análises
+│   └── datasets/                # Datasets processados
+├── build_and_run.sh            # Script de compilação e execução
+├── sistema_principal.py        # Sistema Python integrado
+└── README.md                   # Este arquivo
 ```
 
-### Install
-```
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
+## 🚀 Instalação e Uso
+
+### Pré-requisitos
+
+#### Ubuntu/Debian:
+```bash
+sudo apt-get update
+sudo apt-get install build-essential cmake libeigen3-dev python3 python3-pip
+pip3 install numpy pandas matplotlib seaborn biopython
 ```
 
+### Compilação e Execução
 
-### How to convert a keras model
+#### Opção 1: Execução Completa (Recomendado)
+```bash
+./build_and_run.sh --all
 ```
-cd script
-python DecodeKerasModel.py input-path output-path
+
+#### Opção 2: Passo a Passo
+```bash
+# Verificar dependências
+./build_and_run.sh --check-deps
+
+# Configurar ambiente Python
+./build_and_run.sh --setup-python
+
+# Compilar projeto
+./build_and_run.sh --compile
+
+# Executar exemplos
+./build_and_run.sh --run
 ```
 
 

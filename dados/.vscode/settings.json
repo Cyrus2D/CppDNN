@@ -1,0 +1,22 @@
+{
+    "boost-test-adapter-calendur.tests": [
+        {
+            "testExecutables": [
+                {
+                    "glob": "**/*{_test,_test.exe}"
+                }
+            ],
+            "debugConfig": "Test Config"
+        }
+    ],
+    "boost-test-adapter-robaho.tests": [
+        {
+            "testExecutables": [
+                {
+                    "glob": "**/*{_test,_test.exe}"
+                }
+            ],
+            "debugConfig": "Test Config"
+        }
+    ]
+}

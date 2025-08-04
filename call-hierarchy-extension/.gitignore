@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ambientes virtuais
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Cache
+cache/
+*.cache
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Dados sensíveis
+config/environments/production.json
+config/environments/staging.json
+
+# Resultados grandes (descomente se necessário)
+# data/output/html/*.html
+# data/output/images/*.png

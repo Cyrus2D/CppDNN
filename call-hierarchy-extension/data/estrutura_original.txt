@@ -1,0 +1,10 @@
+total 32
+drwxrwxr-x  4 andre andre 4096 ago  3 16:47 .
+drwxrwxr-x 12 andre andre 4096 ago  3 16:40 ..
+-rw-rw-r--  1 andre andre    0 ago  3 16:47 estrutura_original.txt
+-rw-rw-r--  1 andre andre 1073 ago  3 16:40 package.json
+-rw-rw-r--  1 andre andre 1190 ago  3 16:40 README.md
+drwxrwxr-x  3 andre andre 4096 ago  3 16:41 src
+-rw-rw-r--  1 andre andre  321 ago  3 16:40 tsconfig.json
+drwxrwxr-x  2 andre andre 4096 ago  3 16:40 .vscode
+-rw-rw-r--  1 andre andre  758 ago  3 16:40 webpack.config.js

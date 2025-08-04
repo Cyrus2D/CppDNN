@@ -1,0 +1,1 @@
+# This file marks the web directory as a package. It may also include any necessary initializations for the web module.

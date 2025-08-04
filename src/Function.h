@@ -83,3 +83,9 @@ static void SigmoidFunction(MatrixXd & output){
     }
 }
 
+// Constantes para compatibilidade com diferentes estilos de código
+const Function ReLU = Function::ReLu;
+const Function Softmax = Function::SoftMax;
+const Function Linear = Function::Linear;
+const Function Sigmoid = Function::Sigmoid;
+

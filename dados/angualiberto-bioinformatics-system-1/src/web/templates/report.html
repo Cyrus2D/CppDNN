@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório AnguaLiberto</title>
+    <meta name="author" content="{{ author }}">
+    <meta name="generator" content="Sistema AnguaLiberto v{{ version }}">
+    <style>
+        :root {
+            --angua-blue: #3366CC;
+            --angua-light-blue: #E6EFFF;
+            --angua-dark-blue: #1A4480;
+            --angua-accent: #FF6B35;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--angua-light-blue) 0%, #ffffff 100%);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--angua-blue) 0%, var(--angua-dark-blue) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(51, 102, 204, 0.3);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+
+        .header .subtitle {
+            opacity: 0.9;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .metadata {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid var(--angua-accent);
+        }
+
+        .content-section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--angua-blue);
+        }
+
+        .content-section h2 {
+            color: var(--angua-dark-blue);
+            border-bottom: 2px solid var(--angua-light-blue);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-table th {
+            background: var(--angua-blue);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: var(--angua-light-blue);
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e6efff 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--angua-accent);
+            font-style: italic;
+            margin: 25px 0;
+        }
+
+        .quote-text {
+            font-size: 1.2em;
+            color: var(--angua-dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: 600;
+            color: var(--angua-blue);
+        }
+
+        .footer {
+            background: var(--angua-dark-blue);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer .credits {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--angua-accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .data-table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧬 Relatório AnguaLiberto</h1>
+        <div class="subtitle">Sistema Integrado de Bioinformática</div>
+        <div class="metadata">
+            <div><strong>Versão:</strong> v{{ version }} <span class="badge">Open Source</span></div>
+            <div><strong>Autor:</strong> {{ author }} <span class="badge">Desenvolvedor Principal</span></div>
+            <div><strong>Data:</strong> {{ timestamp }}</div>
+            <div><strong>Licença:</strong> {{ license }} <span class="badge">MIT</span></div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>📊 Dados da Análise</h2>
+        {{ data_section }}
+    </div>
+
+    <div class="quote-section">
+        <div class="quote-text">"{{ quote_text }}"</div>
+        <div class="quote-author">— {{ quote_author }}, {{ quote_date }}</div>
+    </div>
+
+    <div class="content-section">
+        <h2>🔬 Metodologia AnguaLiberto</h2>
+        <p>Este relatório foi gerado utilizando o <strong>Sistema AnguaLiberto</strong>, uma plataforma integrada de bioinformática desenvolvida com foco em:</p>
+        <ul>
+            <li>✅ <strong>Código Aberto:</strong> Transparência e colaboração científica</li>
+            <li>✅ <strong>Qualidade:</strong> Análises baseadas em algoritmos validados</li>
+            <li>✅ <strong>Inovação:</strong> Integração de IA e métodos tradicionais</li>
+            <li>✅ <strong>Acessibilidade:</strong> Interface intuitiva para todos os níveis</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <div><strong>Sistema AnguaLiberto v{{ version }}</strong></div>
+        <div>Desenvolvido por {{ author }}</div>
+        <div class="credits">
+            Construído com tecnologias open source | Licença {{ license }}<br>
+            Contribuições da comunidade científica internacional<br>
+            "Ciência aberta para um futuro melhor" - AnguaLiberto
+        </div>
+    </div>
+</body>
+</html>

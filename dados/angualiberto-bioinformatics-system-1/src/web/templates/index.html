@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Integrado de Bioinformática</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Sistema Integrado de Bioinformática</h1>
+        <p>Realize análises avançadas de proteínas e muito mais.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Funcionalidades</h2>
+            <ul>
+                <li>Análise avançada de proteínas</li>
+                <li>Classificação com IA</li>
+                <li>Geração de relatórios em HTML/PDF</li>
+                <li>Sistema de citações personalizado</li>
+                <li>Interface web interativa</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Iniciar Análise</h2>
+            <form action="/analyze" method="post">
+                <label for="sequence">Sequência:</label>
+                <textarea id="sequence" name="sequence" rows="4" required></textarea>
+                <button type="submit">Analisar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 AnguaLiberto. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
